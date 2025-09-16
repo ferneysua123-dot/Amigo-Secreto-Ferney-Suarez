@@ -48,3 +48,22 @@ function mostrarAmigos(amigos) {
   }
 }
 
+function sortearAmigo() {
+  let cantidadAmigos = amigos.length;
+  if (cantidadAmigos < 2) {
+    alert("Necesitas al menos dos amigos para poder sortear");
+    } else {
+    let indiceAmigo = Math.floor(Math.random() * cantidadAmigos); // generar número aleatorio
+    const amigoSecreto = amigos[indiceAmigo];
+    let resultadoHTML = document.querySelector("#resultado");
+    resultadoHTML.innerHTML = `<li>¡El amigo secreto es: ${amigoSecreto}!</li>`;
+  }
+}
+
+// Reinicia el juego a su estado inicial.
+function reiniciarJuego() {
+    amigos = [];
+    amigo.value = '';
+    document.getElementById('listaAmigos').innerHTML = '';
+    document.getElementById('resultado').innerHTML = '';
+}
